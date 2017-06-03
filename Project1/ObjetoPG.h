@@ -17,8 +17,11 @@ public:
 	virtual bool onClick() = 0;
 
 	bool visible;
+	bool muerto;
+	int puntosObjeto;
 
 protected:
+
 	JuegoPG * obJuego;
 	Texturas_t tipoTextura;
 	SDL_Rect rect;

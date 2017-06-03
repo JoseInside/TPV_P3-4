@@ -1,25 +1,2 @@
-﻿  TexturasSDL.cpp
-  Premio.cpp
-  PlayPG.cpp
-c:\users\skullatt\desktop\tpv_p3-4\project1\playpg.cpp(134): warning C4018: '<': signed/unsigned mismatch
-  Pausa.cpp
-  ObjetoPG.cpp
-  MenuPG.cpp
-  Mariposa.cpp
-  mainP1.cpp
-  JuegoPG.cpp
-c:\users\skullatt\desktop\tpv_p3-4\project1\juegopg.cpp(105): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\skullatt\desktop\tpv_p3-4\project1\juegopg.cpp(118): warning C4018: '<': signed/unsigned mismatch
-c:\users\skullatt\desktop\tpv_p3-4\project1\juegopg.cpp(127): warning C4018: '<': signed/unsigned mismatch
-  GlobosPG.cpp
-  GloboA.cpp
-  GameOver.cpp
-  EstadoPG.cpp
-c:\users\skullatt\desktop\tpv_p3-4\project1\estadopg.cpp(17): warning C4018: '<': signed/unsigned mismatch
-c:\users\skullatt\desktop\tpv_p3-4\project1\estadopg.cpp(28): warning C4018: '<': signed/unsigned mismatch
-c:\users\skullatt\desktop\tpv_p3-4\project1\estadopg.cpp(38): warning C4018: '<': signed/unsigned mismatch
-  Boton.cpp
-  Generating Code...
-c:\users\skullatt\desktop\tpv_p3-4\project1\premio.cpp(29): warning C4715: 'Premio::onClick': not all control paths return a value
-  Project1.vcxproj -> C:\Users\Skullatt\Desktop\TPV_P3-4\bin\GLOBOS_TPVDebug.exe
-  Project1.vcxproj -> C:\Users\Skullatt\Desktop\TPV_P3-4\bin\GLOBOS_TPVDebug.pdb (Full PDB)
+﻿  BouncingBall.cpp
+  Project1.vcxproj -> C:\Users\Jose\Desktop\TPV_P3-4\bin\GLOBOS_TPVDebug.exe

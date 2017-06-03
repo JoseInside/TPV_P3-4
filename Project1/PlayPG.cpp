@@ -4,7 +4,7 @@
 #include "Premio.h"
 #include "Mariposa.h"
 #include "GameOver.h"
-
+#include "BouncingBall.h"
 
 PlayPG::PlayPG(JuegoPG * juego) : EstadoPG(juego)
 {
@@ -20,7 +20,7 @@ PlayPG::~PlayPG()
 
 
 void PlayPG::newBaja(ObjetoJuego* po) {
-	if (typeid(*po) == typeid(GlobosPG) || typeid(*po) == typeid(GloboA)) {
+	if (typeid(*po) == typeid(GlobosPG) || typeid(*po) == typeid(GloboA) || typeid(*po) == typeid(BouncingBall)) {
 		--globos;
 	}
 	else if (typeid(*po) == typeid(Mariposa)) {
@@ -32,8 +32,8 @@ void PlayPG::newBaja(ObjetoJuego* po) {
 }
 
 void PlayPG::newPuntos(ObjetoJuego * po) {
-	if (typeid(*po) == typeid(GlobosPG) || typeid(*po) == typeid(GloboA)) {
-		obJuego->setPoints(dynamic_cast<GlobosPG*>(po)->valorGlobo);
+	if (typeid(*po) == typeid(GlobosPG) || typeid(*po) == typeid(GloboA) || typeid(*po) == typeid(BouncingBall)) {
+		obJuego->setPoints(dynamic_cast<ObjetoPG*>(po)->puntosObjeto);
 	}
 	else if (typeid(*po) == typeid(Premio)) {
 		obJuego->setPoints(dynamic_cast<Premio*>(po)->PP);
@@ -94,7 +94,7 @@ void PlayPG::initObjetos() {
 	globos = globosTotales;
 
 	for (int i = 0; i < globosTotales; ++i) {
-		x = rand() % 610;
+		/*x = rand() % 610;
 		y = rand() % 420;
 
 		if (rand() % 100 < 50) {
@@ -104,27 +104,36 @@ void PlayPG::initObjetos() {
 		else {
 			ObjetoJuego* unGlobo = new GlobosPG(obJuego, x, y, TGlobos);
 			arrayObjetos.push_back(unGlobo);
-		}
+		}*/
 
+
+		arrayObjetos.push_back(obJuego->getFactory()->createNormalElement());
 	}
 
 	for (int cont = 0; cont < mariTotales; cont++) {
-		x = rand() % 610;
+		/*x = rand() % 610;
 		y = rand() % 420;
 		ObjetoJuego* mariposa = new Mariposa(obJuego, x, y, TMariposa);
-		arrayObjetos.push_back(mariposa);
+		arrayObjetos.push_back(mariposa);*/
+
+		arrayObjetos.push_back(obJuego->getFactory()->createSpecialElement());
 	}
 
 	for (int w = 0; w < premioTotales; w++) {
-		x = rand() % 610;
+		/*x = rand() % 610;
 		y = rand() % 420;
 		ObjetoJuego* premio = new Premio(obJuego, x, y, TPremio);
-		arrayObjetos.push_back(premio);
+		arrayObjetos.push_back(premio);*/
+
+		arrayObjetos.push_back(obJuego->getFactory()->createPrizeElement());
 	}
 
-/*	if (i == arrayObjetos.size())
-		return true;
-	else return false;*/
+	/*for (int cont = 0; cont < bolasTotales; cont++) {
+		x = rand() % 610;
+		y = rand() % 420;
+		ObjetoJuego* bola = new BouncingBall(obJuego, x, y, TBola);
+		arrayObjetos.push_back(bola);
+	}*/
 
 }
 

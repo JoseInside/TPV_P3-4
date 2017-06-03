@@ -9,8 +9,8 @@ public:
 	GlobosPG(JuegoPG * hereJuego, int x, int y, Texturas_t textura);
 	virtual ~GlobosPG();
 
-	bool muerto;
-	int valorGlobo = 10;
+	//bool muerto;
+	//int puntosObjeto = 10;
 
 	virtual bool onClick();
 	virtual void update();

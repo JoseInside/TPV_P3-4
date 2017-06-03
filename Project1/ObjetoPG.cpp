@@ -8,7 +8,9 @@ ObjetoPG::ObjetoPG(JuegoPG * juego, int x, int y, Texturas_t t_textura){
 	tipoTextura = t_textura;
 	rect.x = x;
 	rect.y = y;
+	muerto = false;
 }
+
 
 // x/y = Click del ratón (coordenadas)   --   se comprueba si el click está dentro de los límites del rect
 // de textura

@@ -10,6 +10,8 @@
 #include "EstadoJuego.h"
 #include "MenuPG.h"
 #include "Pausa.h"
+#include "Factory_BB.h"
+#include "Factory_PG.h"
 
 using namespace std;
 
@@ -29,6 +31,7 @@ JuegoPG::JuegoPG()
 
 	initSDL();
 	initMedia();
+	setFactory("PlayPG");
 	states.push(new MenuPG(this));
 
 }
@@ -108,11 +111,14 @@ void JuegoPG::initMedia() {
 	archText.push_back("..\\bmps\\globo.png");
 	archText.push_back("..\\bmps\\mariposa.png");
 	archText.push_back("..\\bmps\\premio.png");
+	archText.push_back("..\\bmps\\bola.png");
 	archText.push_back("..\\bmps\\play.png");
 	archText.push_back("..\\bmps\\salir.png");
 	archText.push_back("..\\bmps\\menu.png");
 	archText.push_back("..\\bmps\\continuar.png");
-	archText.push_back("..\\bmps\\buttonScore.png");
+	archText.push_back("..\\bmps\\options.png");
+	archText.push_back("..\\bmps\\bouncing_ball.png");
+	archText.push_back("..\\bmps\\globos.png");
 
 	//Cargamos las texturas (fondo, globos, mariposas y premio)
 	for (int j = 0; j < archText.size(); ++j) {
@@ -246,4 +252,12 @@ void JuegoPG::setPoints(int i) {
 
 int JuegoPG::getPoints() {
 	return puntos;
+}
+
+void JuegoPG::setFactory(string type) {
+	
+	if (type == "PlayBounce")
+		factoria = new Factory_BB(this);
+	else if(type == "PlayPG")
+		factoria = new Factory_PG(this);
 }

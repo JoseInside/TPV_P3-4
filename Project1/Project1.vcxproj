@@ -76,13 +76,13 @@
     <ClCompile Include="JuegoPG.cpp" />
     <ClCompile Include="mainP1.cpp" />
     <ClCompile Include="Mariposa.cpp" />
+    <ClCompile Include="MenuOpciones.cpp" />
     <ClCompile Include="MenuPG.cpp" />
     <ClCompile Include="ObjetoPG.cpp" />
     <ClCompile Include="Pausa.cpp" />
     <ClCompile Include="PlayPG.cpp" />
     <ClCompile Include="Premio.cpp" />
     <ClCompile Include="TexturasSDL.cpp" />
-    <ClCompile Include="Vago.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Boton.h" />
@@ -90,11 +90,15 @@
     <ClInclude Include="Error.h" />
     <ClInclude Include="EstadoJuego.h" />
     <ClInclude Include="EstadoPG.h" />
+    <ClInclude Include="Factory.h" />
+    <ClInclude Include="Factory_BB.h" />
+    <ClInclude Include="Factory_PG.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="GloboA.h" />
     <ClInclude Include="GlobosPG.h" />
     <ClInclude Include="JuegoPG.h" />
     <ClInclude Include="Mariposa.h" />
+    <ClInclude Include="MenuOpciones.h" />
     <ClInclude Include="MenuPG.h" />
     <ClInclude Include="ObjetoJuego.h" />
     <ClInclude Include="ObjetoPG.h" />

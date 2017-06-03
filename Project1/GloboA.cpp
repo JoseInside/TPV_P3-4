@@ -20,12 +20,12 @@ void GloboA::update() {
 		if (rand() % 100 > PDES){
 			rect.h -= DT;
 			rect.w -= DT;
-			valorGlobo += AP;
+			puntosObjeto += AP;
 			
 			if(rect.y >= 0)
 				rect.y-= 10;
 			else {
-				valorGlobo -= DP;
+				puntosObjeto -= DP;
 			}
 		}
 		if (rect.h <= 0 || rect.w <= 0) {

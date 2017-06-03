@@ -4,9 +4,11 @@
 #include "ObjetoJuego.h"
 #include <stack>
 #include "EstadoJuego.h"
-
-enum Texturas_t { TFondo = 0, TGlobos = 1, TMariposa = 2, TPremio = 3, TBPlay = 4, TBExit = 5, TBMenu = 6,
-	TBContinue = 7, TBPuntos = 8
+#include "Factory.h"
+//#include "Factory_BB.h"
+//#include "Factory_PG.h"
+enum Texturas_t { TFondo, TGlobos, TMariposa, TPremio, TBola, TBPlay, TBExit, TBMenu,
+	TBContinue, TBOpciones, TBBouncing, TBGlobos, TNull
 };
 
 
@@ -25,11 +27,12 @@ public:
 	void setPoints(int i);
 	int getPoints();
 	int getGlobos() { return globos; }
+	int getScreenWidth() { return SCREEN_WIDTH; }
+	int getScreenHeight() { return SCREEN_HEIGHT; }
 
-//	void newBaja(ObjetoJuego* po);	 // Los objetos informarán al juego cuando causen baja
-	//void newPuntos(ObjetoJuego* po); // Los objetos informarán al juego cuando se obtengan puntos
-	//void newPremio(ObjetoJuego* po); // Los objetos informará al juego cuando se obtenga un premio
 
+	Factory* getFactory() { return factoria; }
+	void setFactory(string type);
 	void changeState(EstadoJuego* newSt);
 	void pushState(EstadoJuego* newState);
 	EstadoJuego* topEstado();
@@ -55,6 +58,7 @@ private:
 	const int SCREEN_WIDTH = 640;   //Ancho de ventana
 	const int SCREEN_HEIGHT = 480;  //Alto de ventana
 	
+	Factory* factoria;
 
 	bool initSDL();
 	void closeSDL();

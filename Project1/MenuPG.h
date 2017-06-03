@@ -9,12 +9,13 @@ public:
 	~MenuPG();
 
 	static void play(JuegoPG * jg);
-	 static void exit(JuegoPG * jg);
-	//void config(JuegoPG* juego);
+	static void options(JuegoPG* jg);
+	static void exit(JuegoPG * jg);
 
-private:
+protected:
 
 	Boton* B_play;
 	Boton* B_exit;
+	Boton* B_options;
 };
 

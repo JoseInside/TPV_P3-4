@@ -10,6 +10,7 @@ GlobosPG::GlobosPG(JuegoPG * hereJuego, int x, int y, Texturas_t textura) : Obje
 
 	obJuego = hereJuego;
 	
+	puntosObjeto = 10;
 	//Dimensiones de los globos
 	rect.h = 70;
 	rect.w = 50;
@@ -53,7 +54,7 @@ void GlobosPG::update(){
 			if (rand() % 100 > PDES){
 				rect.h -= DT;
 				rect.w -= DT;
-				valorGlobo += AP;
+				puntosObjeto += AP;
 			}
 
 			if (rect.h <= 0 || rect.w <= 0) {
