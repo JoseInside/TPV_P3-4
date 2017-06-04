@@ -5,6 +5,7 @@
 #include "Mariposa.h"
 #include "GameOver.h"
 #include "BouncingBall.h"
+#include "PrBouncingBall.h"
 
 PlayPG::PlayPG(JuegoPG * juego) : EstadoPG(juego)
 {
@@ -20,7 +21,9 @@ PlayPG::~PlayPG()
 
 
 void PlayPG::newBaja(ObjetoJuego* po) {
-	if (typeid(*po) == typeid(GlobosPG) || typeid(*po) == typeid(GloboA) || typeid(*po) == typeid(BouncingBall)) {
+	if (typeid(*po) == typeid(GlobosPG) || typeid(*po) == typeid(GloboA) ||
+		typeid(*po) == typeid(BouncingBall) || typeid(*po) == typeid(PrBouncingBall))
+	{
 		--globos;
 	}
 	else if (typeid(*po) == typeid(Mariposa)) {
@@ -32,7 +35,9 @@ void PlayPG::newBaja(ObjetoJuego* po) {
 }
 
 void PlayPG::newPuntos(ObjetoJuego * po) {
-	if (typeid(*po) == typeid(GlobosPG) || typeid(*po) == typeid(GloboA) || typeid(*po) == typeid(BouncingBall)) {
+	if (typeid(*po) == typeid(GlobosPG) || typeid(*po) == typeid(GloboA) || 
+		typeid(*po) == typeid(BouncingBall) || typeid(*po) == typeid(PrBouncingBall)) 
+	{
 		obJuego->setPoints(dynamic_cast<ObjetoPG*>(po)->puntosObjeto);
 	}
 	else if (typeid(*po) == typeid(Premio)) {
@@ -144,24 +149,18 @@ void PlayPG::freeObjetos() {
 		delete arrayObjetos[i];
 }
 
-/*
-void JuegoPG::update() {
 
-	if (!pausa)
+void PlayPG::update() {
+	
+	/*if (!pausa)
 	{
 		for (int i = 0; i < vObjetos.size(); ++i) {
 			vObjetos[i]->update();
 		}
-	}
-}*/
+	}*/
 
-void PlayPG::update() {
-
-	if (globos == 0) {
-
+	if (globos == 0) 
 		obJuego->changeState(new GameOver(obJuego));
-
-	}
 	else
 		EstadoPG::update();
 }

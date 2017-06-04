@@ -12,6 +12,7 @@
 #include "Pausa.h"
 #include "Factory_BB.h"
 #include "Factory_PG.h"
+#include "Factory_PBB.h"
 
 using namespace std;
 
@@ -258,6 +259,8 @@ void JuegoPG::setFactory(string type) {
 	
 	if (type == "PlayBounce")
 		factoria = new Factory_BB(this);
-	else if(type == "PlayPG")
+	else if (type == "PlayPG")
 		factoria = new Factory_PG(this);
+	else if (type == "PlayPBB")
+		factoria = new Factory_PBB(this);
 }

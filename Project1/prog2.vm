@@ -1,0 +1,21 @@
+push 2
+get_clicks
+jump_n 16
+get_points
+push 2
+mul
+set_points
+get_dx
+push 2
+mul
+set_dx
+get_dy
+push 2
+mul
+set_dy
+go_to 21
+get_points
+push 0
+set_points
+gain_points
+deactivate

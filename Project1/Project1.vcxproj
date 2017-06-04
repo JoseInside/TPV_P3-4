@@ -81,6 +81,7 @@
     <ClCompile Include="ObjetoPG.cpp" />
     <ClCompile Include="Pausa.cpp" />
     <ClCompile Include="PlayPG.cpp" />
+    <ClCompile Include="PrBouncingBall.cpp" />
     <ClCompile Include="Premio.cpp" />
     <ClCompile Include="TexturasSDL.cpp" />
   </ItemGroup>
@@ -92,6 +93,7 @@
     <ClInclude Include="EstadoPG.h" />
     <ClInclude Include="Factory.h" />
     <ClInclude Include="Factory_BB.h" />
+    <ClInclude Include="Factory_PBB.h" />
     <ClInclude Include="Factory_PG.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="GloboA.h" />
@@ -103,7 +105,11 @@
     <ClInclude Include="ObjetoJuego.h" />
     <ClInclude Include="ObjetoPG.h" />
     <ClInclude Include="Pausa.h" />
+    <ClInclude Include="PBBExternAccess.h" />
+    <ClInclude Include="PBBVM.h" />
+    <ClInclude Include="PBBVMProg.h" />
     <ClInclude Include="PlayPG.h" />
+    <ClInclude Include="PrBouncingBall.h" />
     <ClInclude Include="Premio.h" />
     <ClInclude Include="TexturasSDL.h" />
     <ClInclude Include="Vago.h" />

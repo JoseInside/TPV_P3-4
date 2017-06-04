@@ -10,12 +10,15 @@ public:
 
 	static void play_bounce(JuegoPG * jg);
 	static void play_PG(JuegoPG* jg);
+	static void play_PBB(JuegoPG* jg);
 	static void menu(JuegoPG * jg);
 
 protected:
 
 	Boton* B_playPG;
 	Boton* B_playBounce;
+	Boton* B_PBB;
 	Boton* B_menu;
+
 };
 
