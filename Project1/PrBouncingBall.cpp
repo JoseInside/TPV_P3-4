@@ -58,6 +58,7 @@ void PrBouncingBall::addGlobalPoints(int globalPoints)
 
 void PrBouncingBall::setActive(bool active)
 {
+	muerto = true;
+	visible = false;
 	dynamic_cast<PlayPG*>(obJuego->topEstado())->newBaja(this);
-	//visible = active;
 }

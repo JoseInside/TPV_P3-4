@@ -3,6 +3,7 @@
 #include <iostream>
 #include "PBBVMProg.h"
 #include "PBBExternAccess.h"
+
 class PBBVM
 {
 public:
@@ -14,7 +15,7 @@ public:
 		const char *instr = prog.getInstr();
 		int size = prog.getInstrSize();
 		
-		for (int pc = 0; pc<size; pc++) {
+		for (int pc = 0; pc < size; pc++) {
 			
 			switch (instr[pc]) {
 			case PBBVMProg::GET_DX:
@@ -71,18 +72,18 @@ public:
 				pc += sizeof(int);
 				break;
 			case PBBVMProg::GOTO_N:
-				pc = *(int*)(instr + pc);	//pos instrucción + posición actual + 1;
+				pc = *(int*)(instr + pc) - 1;	//pos instrucción + posición actual + 1;
 				break;
 			case PBBVMProg::JMPZ_N:
 				if (_stack.top() == 0)
-					pc = *((int*)(instr + pc + 1));	//pos instrucción + posición actual + 1;
+					pc = *((int*)(instr + pc + 1) - 1);	//pos instrucción + posición actual + 1;
 				_stack.pop();
 				break;
 			case PBBVMProg::JMPGT_N:
 				aux = _stack.top();
 				_stack.pop();
 				if (aux > _stack.top()) {
-					pc = *((int*)(instr + pc + 1));	//pos instrucción + posición actual + 1;
+					pc = *((int*)(instr + pc + 1) - 1);	//pos instrucción + posición actual + 1;
 				}
 				break;
 			}

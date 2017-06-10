@@ -16,10 +16,11 @@ public:
 
 	ObjetoJuego* createNormalElement() {
 
-		x = rand() % obJuego->getScreenWidth();
-		y = rand() % obJuego->getScreenHeight();
+		x = rand() % obJuego->getScreenWidth() - 50;
+		y = rand() % obJuego->getScreenHeight() - 70;
 
-		_prog = new PBBVMProg(rand() % 10 > 4 ? "..\\Project1\\prog1.vm" : "..\\Project1\\prog2.vm");
+		//_prog = new PBBVMProg(rand() % 10 > 4 ? "..\\Project1\\prog1.vm" : "..\\Project1\\prog2.vm");
+		_prog = new PBBVMProg("..\\Project1\\progVM.vm");
 		return new PrBouncingBall(obJuego, x, y, Texturas_t::TBola, _prog);
 	}
 
